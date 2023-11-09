@@ -1,66 +1,111 @@
+<!-- Formulario para agregar estudiante -->
+<tr>
+  <td><input type="text" [(ngModel)]="id" placeholder="ID"></td>
+  <td><input type="text" [(ngModel)]="dni" placeholder="DNI"></td>
+  <td><input type="text" [(ngModel)]="firstName" placeholder="Nombre"></td>
+  <td><input type="text" [(ngModel)]="lastName" placeholder="Apellido"></td>
+  <td><input type="text" [(ngModel)]="email" placeholder="Email"></td>
+  <td><button (click)="saveStudent()">Agregar Estudiante</button></td>
+</tr>
+
 <table>
-
-    <thead>
-        <tr>
-            <th style='text-align: left'>Id</th>
-            <th style='text-align: left'>Dni</th>
-            <th style='text-align: left'>Last Name</th>
-            <th style='text-align: left'>First Name</th>
-            <th style='text-align: left'>Email</th>
-            
-        </tr>
-        
-    </thead>
-    
-    <tbody>
-        <tr>
-            <td></td>
-            <td><input id='dni' /></td>
-            <td><input id='lastName' /></td>
-            <td><input id='firstName' /></td>
-            <td><input id='email' /></td>
-
-            <td colspan='2' style='text-align: center'><button onclick='saveStudent()'>Agregar</button></td>
-            <td colspan='2' style='text-align: center'><button onclick='updateStudent()'>Modificar</button></td>
-            <td colspan='2' style='text-align: center'><button onclick='deleteStudent()'>Eliminar</button></td>
-            <td colspan='2' style='text-align: center'><button onclick='viewStudent()'>Ver</button></td>
-        </tr>
-    </tbody>    
-
-
-      <tfoot>
-        
-        
-    </tfoot>  
-
-
-
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>DNI</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Email</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of studentList">
+      <td>{{ student.id }}</td>
+      <td>{{ student.dni }}</td>
+      <td>{{ student.firstName }}</td>
+      <td>{{ student.lastName }}</td>
+      <td>{{ student.email }}</td>
+      <td>
+        <button (click)="editStudent(student)">Editar</button>
+        <button (click)="deleteStudent(student)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
-<!--td></td>
-<td><input id='dni2' /></td>
-<td><input id='lastName2' /></td>
-<td><input id='firstName2' /></td>
-<td><input id='email2' /></td>
 
-<ng-template #Ver let-modal>
-    <div class="modal-header"></div>
-    <div class="modal-body">
-      <label>Id</label>
-      <input class="from-control" [(ngModel)]= "id2" readonly>
-      <label>DNI</label>
-      <input class="from-control" [(ngModel)]= "dni2" readonly>>
-      <label>Last Name</label>
-      <input class="from-control" [(ngModel)]= "lastName2" readonly>>
-      <label>First Name</label>
-      <input class="from-control" [(ngModel)]= "firstName2" readonly>>
-      <label>Email</label>
-      <input class="from-control" [(ngModel)]= "email2" readonly>>
-    </div>
-    <div class="modal-footer">
-      <button class="btn btn-primary" (click)="modal.close()">Guargar</button>
-    </div>
-  </ng-template>  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div>
+
+   Formulario para ingresar datos de estudiantes 
+  <form>
+    <input type="text" placeholder="ID" [(ngModel)]="id">
+    <input type="text" placeholder="DNI" [(ngModel)]="dni">
+    <input type="text" placeholder="FirstName" [(ngModel)]="firstName">
+    <input type="text" placeholder="LastName" [(ngModel)]="lastName">
+    <input type="text" placeholder="Email" [(ngModel)]="email">
+  </form> 
+
+  Lista de estudiantes en una tabla utilizando *ngFor 
+  <table>
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>DNI</td>
+        <td>FirstName</td>
+        <td>LastName</td>
+        <td>Email</td>
+        
+
+    <button (click)="saveStudent()">Guardar</button>
+      </tr>
+    </thead>
+
+    
+    <button onclick="updateStudent()">Actualizar</button>
+    
+
+    <tbody>
+      <tr *ngFor="let student of studentList">
+        <td>{{ student.id }}</td>
+        <td>{{ student.dni }}</td>
+        <td>{{ student.firstName }}</td>
+        <td>{{ student.lastName }}</td>
+        <td>{{ student.email }}</td>
+        <button onclick="deleteStudent()">Eliminar</button>
+        <button onclick="viewStudent()">Ver Estudiantes</button>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+
+
 
 
 

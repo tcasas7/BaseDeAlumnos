@@ -7,7 +7,7 @@ import { student } from '../models/student';
   providedIn: 'root'
 })
 export class TestSevicesService {
-  private apiUrl = "http://7acf-2800-2245-9080-776-668-1c51-3c8d-fa31.ngrok-free.app/student"; 
+  private apiUrl = "https://backend-idra-production.up.railway.app/student"; 
 
   constructor(private http: HttpClient) {}
 

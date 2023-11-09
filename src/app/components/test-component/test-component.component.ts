@@ -2,7 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { student } from 'src/app/models/student';
 import { TestSevicesService } from 'src/app/services/test-sevices.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Observable } from 'rxjs';
+import { FormGroup } from '@angular/forms';
+
 
 
 
@@ -13,9 +14,11 @@ import { Observable } from 'rxjs';
 })
 export class TestComponentComponent implements OnInit   {
 
+  
 
+  
   studentList= new Array<student>()
-
+  @Input() id: string 
   @Input() dni: string
   @Input() lastName: string
   @Input() firstName :string
@@ -27,6 +30,8 @@ export class TestComponentComponent implements OnInit   {
   @Input() firstName2: string
   @Input() email2: string
 
+  student = new student()
+  studentForm : FormGroup  
 
   constructor(private testService: TestSevicesService, private modalService: NgbModal) {}
 
@@ -164,6 +169,16 @@ deleteStudent(studentToDelete: student) {
       }
     });
   } 
+
+  editStudent(studentToEdit: student) {
+    // Asigna los valores del estudiante seleccionado a las propiedades correspondientes
+    this.id = studentToEdit.id.toString();
+    this.dni = studentToEdit.dni;
+    this.firstName = studentToEdit.firstName;
+    this.lastName = studentToEdit.lastName;
+    this.email = studentToEdit.email;
+  }
+
 }
 
 
