@@ -27,7 +27,7 @@ export class TestComponentComponent implements OnInit {
   student = new student();
   studentForm: FormGroup;
 
-  // Agrega una propiedad para la variable 'ver'
+  
   private ver: any;
 
   constructor(private testService: TestSevicesService, private modalService: NgbModal) {}
@@ -121,7 +121,7 @@ export class TestComponentComponent implements OnInit {
     }
   }
 
- // Cambia la firma de la función viewStudent
+ 
 viewStudent(event: any, student: student) {
   this.id2 = student.id;
   this.dni2 = student.dni;
