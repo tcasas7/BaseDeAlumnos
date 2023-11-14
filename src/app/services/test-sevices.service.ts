@@ -36,10 +36,6 @@ export class TestSevicesService {
     return this.http.post(`${this.apiUrl}/${id}/delete`, null);
   }
   
-
-  viewStudent(id: number): Observable<any> {
-    return this.http.post(`${this.apiUrl}/${id}/view`, null);
-  }
 }
 
 

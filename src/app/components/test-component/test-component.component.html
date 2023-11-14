@@ -1,4 +1,4 @@
-<!-- Formulario para agregar estudiante -->
+
 <tr>
   <td><input type="text" [(ngModel)]="id" placeholder="ID"></td>
   <td><input type="text" [(ngModel)]="dni" placeholder="DNI"></td>
@@ -29,6 +29,8 @@
       <td>
         <button (click)="editStudent(student)">Editar</button>
         <button (click)="deleteStudent(student)">Eliminar</button>
+        <button (click)="viewStudent($event, student)">Ver Estudiante</button>
+
       </td>
     </tr>
   </tbody>
